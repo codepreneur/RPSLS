@@ -57,7 +57,30 @@
     <script src='lib/RockPaperScissors.js'></script>
     <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
     <script>
+    	$(document).ready(function(){
+    		var p1 = new Player("Tony");
+    		var p2 = new Player("Bob");
+    		var game = new Game(p1,p2);
+
+	    		$('.choices img').on('click',function(){
+	    			p1.picks($(this).data('pick'));
+	    			p2.picks('rock');
+
+	    		$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+
+	    		$('li:gt(3)').fadeOut(function(){
+	    			$(this).remove();
+    			});
+    		})
+    	})
       
     </script>
   </body>
 </html>
+
+
+
+
+
+
+
