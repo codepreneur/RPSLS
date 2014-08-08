@@ -10,6 +10,8 @@ app.controller('MainCtrl', function ($scope) {
   ];
 });
 
+// Math.floor(Math.random()*5+1);
+
 app.directive('choice', function () {
   var controller = function ($scope) {
     $scope.showResult = false;
